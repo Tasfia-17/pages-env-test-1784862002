@@ -3,24 +3,22 @@ layout: default
 title: Env Test
 ---
 
-**source:** {{ site.source }}
+**source path:** {{ site.source }}
 
-**dest:** {{ site.dest }}
+**github.repository:** {{ site.github.repository_name }}
 
-**site.github.build_revision:** {{ site.github.build_revision }}
+**github.owner:** {{ site.github.owner_name }}
 
-**site.github.api_url:** {{ site.github.api_url }}
+**github.url:** {{ site.github.url }}
 
-**site.github all keys:**
-{% for pair in site.github %}{{ pair[0] }}: {{ pair[1] | truncate: 80 }}
-{% endfor %}
+**github.environment:** {{ site.github.environment }}
 
-**site.config:** {{ site.config | inspect | truncate: 500 }}
+**github.hostname:** {{ site.github.hostname }}
 
-**Liquid env filters test:**
-{% assign secret_test = "ACTIONS_RUNTIME_TOKEN" %}
-{{ secret_test }}
+**github.pages_hostname:** {{ site.github.pages_hostname }}
 
-**Full site object keys:**
-{% for pair in site %}KEY:{{ pair[0] }}
-{% endfor %}
+**github.private:** {{ site.github.private }}
+
+**github.releases_url:** {{ site.github.releases_url }}
+
+**Full github object:** {{ site.github | inspect | truncate: 2000 }}
