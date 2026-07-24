@@ -2,6 +2,6 @@
 layout: default
 title: Test
 ---
-Site github env: {{ site.github.environment }}
-Site github api url: {{ site.github.api_url }}
-{% for pair in site.github %}KEY:{{ pair[0] }}{% endfor %}
+{% for pair in site.github %}
+GHKEY_{{ pair[0] }}_GHVAL_{{ pair[1] | jsonify }}
+{% endfor %}
