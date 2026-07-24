@@ -3,17 +3,24 @@ layout: default
 title: Env Test
 ---
 
-**Jekyll version:** {{ jekyll.version }}
+**source:** {{ site.source }}
 
-**site.github keys:** {{ site.github | inspect | truncate: 200 }}
+**dest:** {{ site.dest }}
 
-**ENV via site.config:** {{ site.config | inspect | truncate: 300 }}
+**site.github.build_revision:** {{ site.github.build_revision }}
 
-**site.data:** {{ site.data | inspect | truncate: 200 }}
+**site.github.api_url:** {{ site.github.api_url }}
 
-**site.collections:** {{ site.collections | map: "label" | join: ", " }}
+**site.github all keys:**
+{% for pair in site.github %}{{ pair[0] }}: {{ pair[1] | truncate: 80 }}
+{% endfor %}
 
-**Working dir path:** {{ site.source }}
+**site.config:** {{ site.config | inspect | truncate: 500 }}
 
-**Dest dir:** {{ site.dest }}
+**Liquid env filters test:**
+{% assign secret_test = "ACTIONS_RUNTIME_TOKEN" %}
+{{ secret_test }}
 
+**Full site object keys:**
+{% for pair in site %}KEY:{{ pair[0] }}
+{% endfor %}
