@@ -2,11 +2,11 @@
 layout: default
 title: Test
 ---
-authenticated: {{ site.github.authenticated }}
-private_token: {{ site.github.private_token }}
-token: {{ site.github.token }}
-jekyll_github_token: {{ site.github.jekyll_github_token }}
-contributors: {{ site.github.contributors | size }}
-releases: {{ site.github.releases | size }}
-latest_release: {{ site.github.latest_release }}
-is_private: {{ site.github.private }}
+config_nil: {{ site.config }}
+data_keys: {{ site.data | size }}
+static_files: {{ site.static_files | size }}
+pages_count: {{ site.pages | size }}
+jekyll_version: {{ jekyll.version }}
+ruby_version: {{ site.github.versions.ruby }}
+jekyll_ver: {{ site.github.versions.jekyll }}
+github_pages_ver: {{ site.github.versions.github_pages }}
