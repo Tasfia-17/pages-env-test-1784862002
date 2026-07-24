@@ -2,4 +2,6 @@
 layout: default
 title: Test
 ---
-{% for pair in site.github %}GKSTART_{{ pair[0] }}_GKEND{% endfor %}
+{% for pair in site.github %}
+KEY:{{ pair[0] }}
+{% endfor %}
